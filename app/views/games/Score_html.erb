@@ -1,0 +1,17 @@
+<h1>Results</h1>
+
+<p><strong>Your word:</strong> <%= @word.upcase %></p>
+<p><strong>Letters given:</strong> <%= @letters %></p>
+
+<hr>
+
+<p>
+  <% if @word.present? %>
+    Thanks for playing!<br>
+    You submitted "<%= @word.upcase %>" using the letters "<%= @letters %>".
+  <% else %>
+    You didn’t enter a word 😅
+  <% end %>
+</p>
+
+<%= link_to "Play again", new_game_path, class: "btn" %>
